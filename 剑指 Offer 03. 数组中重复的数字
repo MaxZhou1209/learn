@@ -1,0 +1,13 @@
+class Solution(object):
+    def findRepeatNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        dic = {}
+        for i in range(len(nums)):    
+            if nums[i] in dic :
+                return nums[i]
+            else:
+                dic[nums[i]]=1
+        return False
