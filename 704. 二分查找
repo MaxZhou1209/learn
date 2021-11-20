@@ -1,20 +1,28 @@
 class Solution(object):
+    def binarySearch(self, nums, left, right,target):
+        if left>right:
+            return -1
+        else:
+            mid=(left+right)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]>target:
+                right=mid-1
+                return self.binarySearch(nums,left,right,target)
+            else:
+                left=mid+1
+                return self.binarySearch(nums,left,right,target)
+
     def search(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
         :rtype: int
         """
-        dict={}
-        for i in range(len(nums)):
-            dict[nums[i]]=i
-            i+=1
-        print(dict)
+        left=0
+        right=len(nums)-1
+        return self.binarySearch(nums, left, right, target)
 
-        if target in dict:
-            number=dict[target]
-            return number
-        else:
-            return -1
-        
+
+
        
