@@ -1,0 +1,22 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if len(prices)<2:
+            return 0
+        
+        max1=min1=prices[0]
+        maxProfit=profit=0
+        for i in range(len(prices)):
+            if prices[i]>max1:
+                max1=prices[i]
+                profit=max1-min1             
+            elif prices[i]<min1:
+                max1=min1=prices[i]
+                profit=max1-min1
+            if profit>maxProfit:
+                maxProfit=profit
+        return maxProfit
+
