@@ -1,0 +1,19 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        if len(nums) == 1:
+            return nums[0]
+        
+        target = len(nums)/2
+        dic={}
+        for i in range(len(nums)) :
+            if nums[i] in dic:
+                dic[nums[i]] += 1
+                if dic[nums[i]] > target:
+                    return nums[i]
+            else:
+                dic[nums[i]] = 1
