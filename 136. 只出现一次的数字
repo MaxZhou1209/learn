@@ -1,0 +1,21 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        #dick ={}
+        #for i in range(len(nums)):
+         #   if nums[i] in dick:
+         #       dick[nums[i]]+=1
+         #   else:
+         #       dick[nums[i]]=0
+        #return list(dick.keys())[list(dick.values()).index(0)]
+        dick ={}
+        for i in range(len(nums)):
+            if nums[i] in dick:
+                del dick[nums[i]]
+            else:
+                dick[nums[i]]=0
+        print(list(dick.keys())[0])
+        return list(dick.keys())[0]
