@@ -1,0 +1,24 @@
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        dicLong={}
+        targetDic={}
+        if len(nums1)>=len(nums2):
+            for i in range(len(nums1)):
+                dicLong[nums1[i]]=i
+            for j in range(len(nums2)):
+                if nums2[j] in dicLong:
+                    targetDic[nums2[j]]=j
+        else:
+            for i in range(len(nums2)):
+                dicLong[nums2[i]]=i
+            for j in range(len(nums1)):
+                if nums1[j] in dicLong:
+                    targetDic[nums1[j]]=j
+                    
+        print(targetDic.keys())
+        return targetDic.keys()
