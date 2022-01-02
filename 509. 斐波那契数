@@ -1,0 +1,19 @@
+class Solution(object):
+    def fib(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        # if n==0 or n==1:
+        #     return n
+        # else:
+        #     sum=self.fib(n-1)+self.fib(n-2)
+        #     return sum
+
+        listy=[0,1]
+        
+        for i in range(2,n+1):
+            listy.append(listy[i-1]+listy[i-2])
+
+        print(listy[n])
+        return listy[n]
