@@ -1,0 +1,43 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def reversePrint(self, head):
+        """
+        :type head: ListNode
+        :rtype: List[int]
+        """
+
+        result = []
+
+        if head == None:
+            return result
+        elif head.next == None:
+            result.append(head.val)
+            return result
+        else:
+            result = self.reversePrint(head.next)
+            result.append(head.val)
+            return result
+
+
+
+
+
+
+
+        # index = head
+        # oldList = []
+        # newList = []
+        
+        # while index!= None:
+        #     oldList.append(index.val)
+        #     index=index.next
+        # print(oldList)
+        # for i in range(len(oldList)-1,-1,-1):
+        #     newList.append(oldList[i])
+        # print(newList)
+        # return newList
